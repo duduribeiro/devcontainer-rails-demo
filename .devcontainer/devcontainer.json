@@ -6,6 +6,9 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
+    "features": {
+        "ghcr.io/shyim/devcontainers-features/bun:0": {}
+    },
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "remoteEnv": {
         "GIT_EDITOR": "code --wait"
