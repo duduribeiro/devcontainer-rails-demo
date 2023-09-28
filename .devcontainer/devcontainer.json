@@ -2,10 +2,8 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ruby-rails-postgres
 {
     "name": "DemoApp DevContainer",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
     "features": {
         "ghcr.io/shyim/devcontainers-features/bun:0": {}
     },
