@@ -7,7 +7,9 @@
     "features": {
         "ghcr.io/shyim/devcontainers-features/bun:0": {}
     },
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    // The property is the path VS Code should open by default when
+    // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+    "workspaceFolder": "/workspace",
     "remoteEnv": {
         "GIT_EDITOR": "code --wait"
     }

@@ -7,7 +7,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
 
     volumes:
-      - ..:/workspaces:cached
+      - ..:/workspace:cached
       - $HOME/.ssh/:/home/vscode/.ssh/
     depends_on:
       - postgres
