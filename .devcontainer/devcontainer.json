@@ -12,5 +12,63 @@
     "workspaceFolder": "/workspace",
     "remoteEnv": {
         "GIT_EDITOR": "code --wait"
+    },
+    "onCreateCommand": ".devcontainer/onCreateCommand.sh",
+    "customizations": {
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "sqltools.connections": [
+                    {
+                        "name": "Development Database",
+                        "driver": "PostgreSQL",
+                        "previewLimit": 50,
+                        "server": "postgres",
+                        "port": 5432,
+                        "database": "devcontainer_rails_demo_development",
+                        "username": "postgres",
+                        "password": "postgres"
+                    },
+                    {
+                        "name": "Test Database",
+                        "driver": "PostgreSQL",
+                        "previewLimit": 50,
+                        "server": "postgres",
+                        "port": 5432,
+                        "database": "devcontainer_rails_demo_test",
+                        "username": "postgres",
+                        "password": "postgres"
+                    }
+                ],
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "Shopify.ruby-lsp",
+                "manuelpuyol.erb-linter",
+                "GitHub.github-vscode-theme",
+                "eamodio.gitlens",
+                "aki77.rails-db-schema",
+                "bung87.rails",
+                "mtxr.sqltools-driver-pg",
+                "mtxr.sqltools",
+                "testdouble.vscode-standard-ruby"
+            ],
+            "rubyLsp.enableExperimentalFeatures": true
+        }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+        3000,
+        5432
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "web",
+            "onAutoForward": "notify",
+            "requireLocalPort": true
+        },
+        "5432": {
+            "label": "postgres"
+        }
     }
 }
