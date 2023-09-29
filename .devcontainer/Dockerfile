@@ -3,6 +3,10 @@ ARG VARIANT=bullseye
 
 FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
 
+# Default value to allow debug server to serve content over GitHub Codespace's port forwarding service
+# The value is a comma-separated list of allowed domains
+ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.preview.app.github.dev,.app.github.dev"
+
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
     build-essential gnupg2 tar git zsh libssl-dev zlib1g-dev libyaml-dev curl libreadline-dev \
